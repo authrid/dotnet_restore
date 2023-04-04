@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Product } from "../models/product";
 import Catalog from "../../features/catalog/catalog";
 import Header from './header';
+import { Container } from '@mui/system';
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -27,8 +28,9 @@ function App() {
     <>
       <CssBaseline></CssBaseline>
       <Header></Header>
-      <Catalog products={products} addProduct={addProduct}/>
-      
+      <Container>
+        <Catalog products={products} addProduct={addProduct}/>
+      </Container>
     </>
   );
 }
